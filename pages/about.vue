@@ -7,10 +7,12 @@
 <script>
 export default {
   loading: false,
+  // middleware: 'auth',
+  // async middleware() {
+  //   await new Promise((resolve) => setTimeout(() => resolve(), 3000));
+  // },
   async fetch({ $axios }) {
-    console.log('Start about', Date.now());
     await $axios.post('/api/test', {}, { progress: false });
-    console.log('End about', Date.now());
   },
   async mounted() {
     await this.$nextTick();

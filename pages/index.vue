@@ -11,9 +11,7 @@
 export default {
   loading: false,
   async fetch({ $axios }) {
-    console.log('Start index', Date.now());
     await $axios.post('/api/test', {}, { progress: false });
-    console.log('End index', Date.now());
   },
   methods: {
     async activeProgressBar() {

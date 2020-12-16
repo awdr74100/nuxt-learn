@@ -45,4 +45,9 @@ export default {
     color: '#3B8070',
     background: 'white',
   },
+
+  pageTransition: {
+    name: 'fade',
+    mode: 'out-in',
+  },
 };

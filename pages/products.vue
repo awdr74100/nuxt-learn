@@ -1,15 +1,9 @@
 <template>
   <div>
-    <h1>產品</h1>
+    <h1>商品列表 wrap</h1>
+    <nuxt-child />
   </div>
 </template>
 
 <script>
-export default {
-  async fetch({ $axios }) {
-    console.log('Start products', Date.now());
-    await $axios.post('/api/test', {}, { progress: false });
-    console.log('End products', Date.now());
-  },
-};
 </script>
