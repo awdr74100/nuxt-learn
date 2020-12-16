@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 export default {
   head: {
     title: 'nuxt-learn',
@@ -13,7 +15,7 @@ export default {
 
   plugins: [],
 
-  components: true,
+  components: false,
 
   buildModules: [],
 
@@ -21,7 +23,12 @@ export default {
 
   axios: {},
 
-  build: {},
+  build: {
+    extractCSS: isProd || false,
+    hotMiddleware: {
+      client: { noInfo: true },
+    },
+  },
 
   server: {
     port: 9000,

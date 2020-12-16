@@ -1,32 +1,36 @@
 <template>
   <div>
     <h1>首頁</h1>
-    <button class="btn btn-primary" @click.prevent="activeProgressBar">
-      按鈕
-    </button>
   </div>
 </template>
 
 <script>
 export default {
-  loading: false,
-  async fetch({ $axios }) {
-    await $axios.post('/api/test', {}, { progress: false });
+  watchQuery: ['key'],
+  layout: 'default',
+  middleware: ['auth'],
+  head: {},
+  transition: { name: 'fade' },
+  scrollToTop: true,
+  validate(context) {
+    console.log('validate active');
+    return true;
   },
-  methods: {
-    async activeProgressBar() {
-      this.$nuxt.$loading.start();
-      await this.$axios.post('/api/test', {}, { progress: false });
-      this.$nuxt.$loading.finish();
-    },
+  asyncData(context) {
+    console.log('asyncData active');
+    return { title: 'title' };
   },
-  async mounted() {
-    await this.$nextTick();
-    this.$nuxt.$loading.finish();
+  fetch() {
+    console.log('fetch active');
+    this.title = 'title';
   },
-  beforeRouteLeave(to, from, next) {
-    this.$nuxt.$loading.start();
-    next();
+  beforeCreate() {
+    const env = process.client ? 'client' : 'server';
+    console.log(`${env} beforeCreate active`);
+  },
+  created() {
+    const env = process.client ? 'client' : 'server';
+    console.log(`${env} created active`);
   },
 };
 </script>

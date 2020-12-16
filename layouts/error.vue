@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ error }}
+    <pre>{{ error }}</pre>
   </div>
 </template>
 

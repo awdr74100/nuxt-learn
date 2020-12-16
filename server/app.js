@@ -6,7 +6,7 @@ app.post('/api/test', async (req, res) => {
       resolve();
     }, 300);
   });
-  res.send({ message: 'success' });
+  res.send({ message: Date.now() });
 });
 
 module.exports = app;
