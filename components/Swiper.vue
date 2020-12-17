@@ -1,10 +1,6 @@
 <template>
-  <div class="container">
-    <ul>
-      <li><nuxt-link to="/">首頁</nuxt-link></li>
-      <li><nuxt-link to="/about">關於</nuxt-link></li>
-    </ul>
-    <Nuxt />
+  <div>
+    <h1>Swiper</h1>
   </div>
 </template>
 
@@ -25,64 +21,55 @@ export default {
   scrollToTop: true,
   fetchOnServer: true,
   fetchDelay: 200,
-  // middleware: ['auth'], // Blocking (server、client)
-  middleware(context) {
-    console.log(`layout middleware ${Date.now()} start`);
-    // await delay();
-    console.log(`layout middleware ${Date.now()} finish`);
-  },
+  middleware: ['auth'], // Blocking (server、client)
   async validate(context) {
     // Blocking (server、client)
-    console.log(`layout validate ${Date.now()} start`);
+    console.log(`component validate ${Date.now()} start`);
     // await delay();
-    console.log(`layout validate ${Date.now()} finish`);
+    console.log(`component validate ${Date.now()} finish`);
     return true;
   },
   async asyncData(context) {
     // Blocking (server、client)
-    console.log(`layout asyncData ${Date.now()} start`);
+    console.log(`component asyncData ${Date.now()} start`);
     // await delay();
-    console.log(`layout asyncData ${Date.now()} finish`);
+    console.log(`component asyncData ${Date.now()} finish`);
     return { title: 'title' };
   },
   async fetch() {
     // Blocking (server)、Non-Blocking (client)
-    console.log(`layout fetch ${Date.now()} start`);
+    console.log(`component fetch ${Date.now()} start`);
     await delay();
-    console.log(`layout fetch ${Date.now()} finish`);
+    console.log(`component fetch ${Date.now()} finish`);
     this.title = 'title';
   },
   async beforeCreate() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`layout beforeCreate ${Date.now()} start in ${env}`);
+    console.log(`component beforeCreate ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`layout beforeCreate ${Date.now()} finish in ${env}`);
+    console.log(`component beforeCreate ${Date.now()} finish in ${env}`);
   },
   async created() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`layout created ${Date.now()} start in ${env}`);
+    console.log(`component created ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`layout created ${Date.now()} finish in ${env}`);
+    console.log(`component created ${Date.now()} finish in ${env}`);
   },
   async beforeMount() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`layout beforeMount ${Date.now()} start in ${env}`);
+    console.log(`component beforeMount ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`layout beforeMount ${Date.now()} finish in ${env}`);
+    console.log(`component beforeMount ${Date.now()} finish in ${env}`);
   },
   async mounted() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`layout mounted ${Date.now()} start in ${env}`);
+    console.log(`component mounted ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`layout mounted ${Date.now()} finish in ${env}`);
+    console.log(`component mounted ${Date.now()} finish in ${env}`);
   },
 };
 </script>
-
-<style lang="scss">
-@import '~@/assets/scss/all.scss';
-</style>

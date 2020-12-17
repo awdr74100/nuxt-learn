@@ -1,8 +1,7 @@
 <template>
   <div>
-    <h1>關於</h1>
+    <h1>次要關於</h1>
     <Swiper />
-    <nuxt-child />
   </div>
 </template>
 
@@ -15,8 +14,8 @@ export default {
     Swiper,
   },
   watchQuery(newQuery) {
-    console.log(`page newQuery ${Date.now()} start`);
-    console.log(`page newQuery ${Date.now()} finish`);
+    console.log(`child page newQuery ${Date.now()} start`);
+    console.log(`child page newQuery ${Date.now()} finish`);
     return newQuery.key;
   },
   // watchQuery: ['key'], // Non-Blocking (client)
@@ -29,58 +28,58 @@ export default {
   fetchDelay: 200,
   // middleware: ['auth'], // Blocking (server、client)
   middleware(context) {
-    console.log(`page middleware ${Date.now()} start`);
+    console.log(`child page middleware ${Date.now()} start`);
     // await delay();
-    console.log(`page middleware ${Date.now()} finish`);
+    console.log(`child page middleware ${Date.now()} finish`);
   },
   async validate(context) {
     // Blocking (server、client)
-    console.log(`page validate ${Date.now()} start`);
+    console.log(`child page validate ${Date.now()} start`);
     // await delay();
-    console.log(`page validate ${Date.now()} finish`);
+    console.log(`child page validate ${Date.now()} finish`);
     return true;
   },
   async asyncData(context) {
     // Blocking (server、client)
-    console.log(`page asyncData ${Date.now()} start`);
+    console.log(`child page asyncData ${Date.now()} start`);
     // await delay();
-    console.log(`page asyncData ${Date.now()} finish`);
+    console.log(`child page asyncData ${Date.now()} finish`);
     return { title: 'title' };
   },
   async fetch() {
     // Blocking (server)、Non-Blocking (client)
-    console.log(`page fetch ${Date.now()} start`);
+    console.log(`child page fetch ${Date.now()} start`);
     await delay();
-    console.log(`page fetch ${Date.now()} finish`);
+    console.log(`child page fetch ${Date.now()} finish`);
     this.title = 'title';
   },
   async beforeCreate() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`page beforeCreate ${Date.now()} start in ${env}`);
+    console.log(`child page beforeCreate ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`page beforeCreate ${Date.now()} finish in ${env}`);
+    console.log(`child page beforeCreate ${Date.now()} finish in ${env}`);
   },
   async created() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`page created ${Date.now()} start in ${env}`);
+    console.log(`child page created ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`page created ${Date.now()} finish in ${env}`);
+    console.log(`child page created ${Date.now()} finish in ${env}`);
   },
   async beforeMount() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`page beforeMount ${Date.now()} start in ${env}`);
+    console.log(`child page beforeMount ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`page beforeMount ${Date.now()} finish in ${env}`);
+    console.log(`child page beforeMount ${Date.now()} finish in ${env}`);
   },
   async mounted() {
     // Non-Blocking (server、client)
     const env = process.client ? 'client' : 'server';
-    console.log(`page mounted ${Date.now()} start in ${env}`);
+    console.log(`child page mounted ${Date.now()} start in ${env}`);
     // await delay();
-    console.log(`page mounted ${Date.now()} finish in ${env}`);
+    console.log(`child page mounted ${Date.now()} finish in ${env}`);
   },
 };
 </script>
