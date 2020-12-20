@@ -8,22 +8,6 @@
 
 <script>
 export default {
-  fetchDelay: 0,
-  middleware(context) {
-    // console.log('middleware active');
-  },
-  validate(context) {
-    // console.log('validate active');
-    return true;
-  },
-  fetch() {
-    console.log(this.$store);
-    console.log(this.$router);
-    // console.log('fetch active');
-  },
-  asyncData(context) {
-    // console.log('asyncData active');
-  },
   methods: {
     fetch() {
       this.$fetch();

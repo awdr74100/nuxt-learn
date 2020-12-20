@@ -47,11 +47,11 @@ export default {
     height: '5px',
   },
 
-  loadingIndicator: {
-    name: 'circle',
-    color: '#3B8070',
-    background: 'white',
-  },
+  // loadingIndicator: {
+  //   name: 'circle',
+  //   color: '#3B8070',
+  //   background: 'white',
+  // },
 
   pageTransition: {
     name: 'fade',
