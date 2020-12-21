@@ -19,7 +19,7 @@ export default {
 
   buildModules: [],
 
-  modules: ['@nuxtjs/axios'],
+  modules: ['@nuxtjs/axios', 'cookie-universal-nuxt'],
 
   axios: {},
 

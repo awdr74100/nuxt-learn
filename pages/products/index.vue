@@ -5,5 +5,17 @@
 </template>
 
 <script>
-export default {};
+import delay from '@/utils/delay';
+
+export default {
+  data() {
+    return {
+      title: 'ddd',
+    };
+  },
+  async middleware() {
+    await delay();
+    console.log('middleware active');
+  },
+};
 </script>
