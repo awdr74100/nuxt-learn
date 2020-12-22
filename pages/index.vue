@@ -5,11 +5,15 @@
 </template>
 
 <script>
-// import delay from '@/utils/delay';
-
 export default {
-  fetch() {
-    console.log(this.$cookies);
-  },
+  head: () => ({
+    title: '我是首頁',
+  }),
 };
 </script>
+
+<style lang="scss" scoped>
+h1 {
+  color: red;
+}
+</style>

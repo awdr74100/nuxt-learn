@@ -1,4 +1,4 @@
-import delay from '@/utils/delay';
+// import delay from '@/utils/delay';
 
 export default {
   // state: () => ({
@@ -6,8 +6,9 @@ export default {
   // }),
   actions: {
     async nuxtServerInit({ commit }, { res }) {
-      await delay();
-      res.cookie('token', 'aaaaa', { maxAge: 1000 * 30, httpOnly: true });
+      // await delay();
+      // res.cookie('token', 'aaaaa', { maxAge: 1000 * 30, httpOnly: true });
+      // console.log('nuxtServerInit');
       // app.$cookies.set('token', 'aaaaaa', {
       //   httpOnly: true,
       //   sameSite: 'strict',

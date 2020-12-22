@@ -11,7 +11,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  css: ['@/assets/scss/all.scss'],
+  css: ['@/assets/scss/all'],
 
   plugins: [],
 
@@ -24,7 +24,7 @@ export default {
   axios: {},
 
   build: {
-    extractCSS: isProd || false,
+    extractCSS: isProd,
     hotMiddleware: {
       client: { noInfo: true },
     },
