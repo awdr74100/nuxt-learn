@@ -9,6 +9,11 @@ export default {
   head: () => ({
     title: '我是首頁',
   }),
+  asyncData({ $config }) {
+    console.log($config);
+  },
+  fetch() {},
+  created() {},
 };
 </script>
 

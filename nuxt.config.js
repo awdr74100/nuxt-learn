@@ -57,4 +57,11 @@ export default {
     name: 'fade',
     mode: 'out-in',
   },
+
+  publicRuntimeConfig: {
+    BASE_URL: process.env.BASE_URL || 'http://localhost:9000',
+  },
+  privateRuntimeConfig: {
+    ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SECRET || 'abcd',
+  },
 };
