@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>錯誤</h1>
     <pre>{{ error }}</pre>
   </div>
 </template>

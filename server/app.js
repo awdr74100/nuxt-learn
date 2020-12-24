@@ -1,12 +1,19 @@
 const app = require('express')();
 
-app.post('/api/test', async (req, res) => {
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 300);
+app.get('/api/products', async (req, res) => {
+  res.send({
+    success: true,
+    products: [
+      {
+        title: '沐浴乳',
+        price: 160,
+      },
+      {
+        title: '洗髮乳',
+        price: 200,
+      },
+    ],
   });
-  res.send({ message: Date.now() });
 });
 
 module.exports = app;

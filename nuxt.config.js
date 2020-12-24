@@ -13,7 +13,18 @@ export default {
 
   css: ['@/assets/scss/all'],
 
-  plugins: [],
+  plugins: [
+    {
+      src: '@/plugins/axios.js',
+    },
+    {
+      src: '@/plugins/vue2-datepicker.js',
+    },
+    {
+      src: '@/plugins/vue-slider-component.js',
+      mode: 'client',
+    },
+  ],
 
   components: false,
 
@@ -21,7 +32,9 @@ export default {
 
   modules: ['@nuxtjs/axios', 'cookie-universal-nuxt'],
 
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:9000',
+  },
 
   build: {
     extractCSS: isProd,
